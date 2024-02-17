@@ -9,25 +9,10 @@ import static org.springframework.http.HttpStatus.*;
 @Getter
 @AllArgsConstructor
 public enum ErrorCode {
-    /* 10* 가계부 */
-    MEMO_LIMIT(BAD_REQUEST, 100, "메모는 8개까지 작성 가능합니다."),
-    ACCOUNTBOOK_ALREADY_EXISTS(BAD_REQUEST, 101, "가계부가 이미 존재합니다."),
-    /* 20* 동네정보 */
-    POST_NOT_EXISTS(BAD_REQUEST, 200, "없는 게시글입니다."),
-    COMMENT_NOT_EXISTS(BAD_REQUEST, 201, "없는 댓글입니다."),
-
-    /* 50* 스크랩 */
-
-    /* 60* 신고 */
-    REPORT_ALREADY_EXISTS(BAD_REQUEST, 600, "이미 신고 처리가 되었습니다."),
-
-    /* 200 NO_CONTENT : 자료를 찾을 수 없음 */
-    NO_CONTENT_FOUND(NO_CONTENT, 204, "요청된 자료를 찾을 수 없습니다."),
 
     /* 400 BAD_REQUEST : 잘못된 요청 */
     INVALID_REFRESH_TOKEN(BAD_REQUEST, 400, "리프레시 토큰이 유효하지 않습니다"),
     MISMATCH_REFRESH_TOKEN(BAD_REQUEST, 400, "리프레시 토큰의 유저 정보가 일치하지 않습니다"),
-    CANNOT_FOLLOW_MYSELF(BAD_REQUEST, 400,"자기 자신은 팔로우 할 수 없습니다"),
     INVALID_VALUE(BAD_REQUEST, 400, "잘못된 값입니다." ),
 
 

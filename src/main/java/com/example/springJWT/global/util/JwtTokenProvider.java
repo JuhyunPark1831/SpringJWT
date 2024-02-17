@@ -20,7 +20,7 @@ public class JwtTokenProvider {
         this.userRepository = userRepository;
     }
 
-    private final Long ACCESS_TOKEN_EXPIRE_LENGTH = 1000L * 60 * 60 * 24 * 14; // 2 weeks
+    private final Long ACCESS_TOKEN_EXPIRE_LENGTH = 1000L * 20; // 10 seconds
     private final Long REFRESH_TOKEN_EXPIRE_LENGTH = 1000L * 60 * 60 * 24 * 14; // 30 days
 
     public String createAccessToken(Long userId) {
@@ -43,10 +43,6 @@ public class JwtTokenProvider {
                 .setIssuedAt(now) //token 발행 시간
                 .setExpiration(validity)
                 .compact();
-    }
-
-    public Authentication getAuthentication(String token) {
-        return null;
     }
 
 }
